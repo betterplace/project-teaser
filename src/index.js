@@ -1,5 +1,4 @@
 import React from 'react'
-// import './styles.scss'
 require('./styles.sass')
 
 const translations = {
@@ -79,7 +78,7 @@ class Project extends React.Component {
            </div>
          </div>
 
-         <div className="progress generic-progress-bar small">
+         <div className="project-teaser-progress">
            <div className="bar" style={{width: project.progress_percentage + '%'}}>
            </div>
          </div>
