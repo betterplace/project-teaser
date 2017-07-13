@@ -1,0 +1,314 @@
+$border-radius-base: 4px
+$light-grey:      #cccccc
+$very-light-grey: #eeeeee
+$dark-grey:       #636b70
+$very-dark-grey:  #3f3f3f
+$dark-green:      #6a9000
+$medium-grey:     #949494
+$light-green:     #cccc20
+$medium-green:    #bad304
+
+@mixin phone
+  @media only screen and (max-width: 768px)
+    @content
+
+@mixin desktop
+  @media only screen and (min-width: 769px)
+    @content
+
+@mixin hyphens($mode: auto)
+  word-wrap: break-word
+  -webkit-hyphens: $mode
+     -moz-hyphens: $mode
+      -ms-hyphens: $mode
+       -o-hyphens: $mode
+          hyphens: $mode
+
+.project-teaser
+  cursor: pointer
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  position: relative
+  border-style: solid
+  border-color: $light-grey
+  display: block
+  color: $dark-grey
+  font-weight: 300
+
+  +desktop
+    border-width: 1px
+    border-radius: 0 0 $border-radius-base $border-radius-base
+    padding-bottom: 0
+    height: 360px
+
+  +phone
+    border-width: 0 0 1px 0
+    padding-bottom: 15px
+
+  &:hover,
+  &:focus
+    text-decoration: none
+    +desktop
+      outline: none
+      box-shadow: 0 0 7px 0 $light-grey
+
+    h2
+      text-decoration: underline
+      +desktop
+        color: $very-dark-grey
+      +phone
+        color: $dark-green
+
+  .image
+    height: 214px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    margin-bottom: 39px
+
+  h2
+    +hyphens
+    background: white
+    position: absolute
+    padding: 10px 0 5px 15px
+    font-size: 18px
+    line-height: 23px
+    left: 0
+    right: 105px
+    +desktop
+      bottom: 98px
+      color: $very-dark-grey
+      margin-left: 0
+      margin-right: 0
+    +phone
+      bottom: 115px
+      color: $dark-green
+
+  .logo
+    background-color: white
+    background-size: contain
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    width: 105px
+    height: 105px
+    position: absolute
+    right: 0
+    border: 15px solid white
+    +desktop
+      bottom: 110px
+    +phone
+      bottom: 124px
+
+  .generic-project-values
+    padding: 0 15px
+
+    &:last-child
+      margin-bottom: 10px
+
+  .generic-progress-bar
+    margin: 10px 15px 13px 15px
+
+  .location
+    color: $medium-grey
+    font-weight: normal
+    font-size: 14px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    &.location
+      height: 20px
+      margin: 0 15px 5px 15px
+
+  &.is-preview
+    @keyframes placeholder-shimmer
+      0%
+        background-position: -468px 0
+      100%
+        background-position: 468px 0
+
+    .animated-background
+      animation-duration: 1s
+      animation-fill-mode: forwards
+      animation-iteration-count: infinite
+      animation-name: placeholder-shimmer
+      animation-timing-function: linear
+      background: #f6f7f8
+      background: linear-gradient(to right, $very-light-grey 8%, #dddddd 18%, $very-light-grey 33%)
+      background-size: 800px 104px
+      height: 96px
+      position: relative
+      height: 100%
+
+    .background-masker
+      background: white
+      position: absolute
+
+    +phone
+      height: 205px
+
+      .mask-picture
+        top: 0
+        left: 0
+        right: 0
+        height: 25px
+
+      .mask-left-side
+        left: 0
+        right: calc(355px - 25px)
+        top: 0
+        height: 100%
+        border-bottom-left-radius: $border-radius-base
+
+      .mask-right-side
+        left: calc(355px - 25px)
+        right: 0
+        top: 0
+        height: 100%
+        border-bottom-right-radius: $border-radius-base
+
+      .mask-carrier
+        right: 0
+        width: 175px
+        top: 20px
+        height: 80px
+
+      .mask-bottom
+        left: 0
+        right: 0
+        bottom: 0
+        height: 25px
+        border-bottom-right-radius: $border-radius-base
+        border-bottom-left-radius: $border-radius-base
+
+      .mask-headline-1
+        left: 0
+        right: 0
+        top: 40px
+        height: 10px
+
+      .mask-headline-2
+        left: 0
+        right: 0
+        top: 65px
+        height: 10px
+
+      .mask-headline-3
+        left: 0
+        right: 0
+        top: 90px
+        height: 10px
+
+      .mask-progress
+        left: 0
+        right: 0
+        top: 140px
+        height: 10px
+
+    +desktop
+      .mask-picture
+        top: 0
+        left: 0
+        right: 0
+        height: 180px
+
+      .mask-left-side
+        left: 0
+        right: calc(298px - 16px)
+        top: 0
+        height: 100%
+        border-bottom-left-radius: $border-radius-base
+
+      .mask-right-side
+        left: calc(298px - 16px)
+        right: 0
+        top: 0
+        height: 100%
+        border-bottom-right-radius: $border-radius-base
+
+      .mask-carrier
+        right: 0
+        width: 120px
+        top: 180px
+        height: 90px
+
+      .mask-bottom
+        left: 0
+        right: 0
+        bottom: 0
+        height: 10px
+        border-bottom-right-radius: $border-radius-base
+        border-bottom-left-radius: $border-radius-base
+
+      .mask-headline-1
+        left: 0
+        right: 0
+        top: 200px
+        height: 10px
+
+      .mask-headline-2
+        left: 0
+        right: 0
+        top: 230px
+        height: 10px
+
+      .mask-headline-3
+        left: 0
+        right: 0
+        top: 260px
+        height: 15px
+
+      .mask-progress
+        left: 0
+        right: 0
+        bottom: 26px
+        height: 16px
+
+.generic-progress-bar
+  position: relative
+  box-shadow: inset -1px 1px 1px 0px rgba(0, 0, 0, 0.2)
+
+  .bar
+    background-image: linear-gradient(to bottom, $medium-green 0%, darken($medium-green, 4%) 100%)
+    background-repeat: repeat-x
+    box-shadow: none
+    transition: width 0.2s linear
+    height: 100%
+    border-radius: $border-radius-base
+
+  .percentage
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    text-align: center
+    line-height: 18px
+    font-size: 12px
+    color: $very-dark-grey
+
+  &.large
+    height: 25px
+    box-shadow: inset -1px 1px 2px 0px rgba(0, 0, 0, 0.2)
+    .percentage
+      line-height: 25px
+      font-size: 14px
+
+  &.small
+    height: 15px
+    .percentage
+      line-height: 15px
+      font-size: 10px
+
+.project-teaser-values
+  display: flex
+  justify-content: space-between
+  padding-left: 15px
+  padding-right: 15px
+
+.project-teaser-value
+  font-size: 13px
+  font-weight: 300
+  white-space: nowrap
+
+  div
+    font-size: 18px
+    line-height: 22px
+    white-space: nowrap
