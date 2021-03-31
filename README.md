@@ -1,3 +1,12 @@
+# DEPRECATED
+
+This package been superseded by the teaser included in [betterplace-react-components](https://github.com/betterplace/betterplace-react-components) and is no longer maintained.
+
+----
+----
+----
+----
+
 # betterplace-react-project-teaser
 
 [![Travis][build-badge]][build]
